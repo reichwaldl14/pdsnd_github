@@ -191,10 +191,7 @@ def user_stats(df, city):
         print(dict(users_gen))
 
         # Display earliest, most recent, and most common year of birth
-        earliest_by = df['Birth Year'].min()
-        recent_by = df['Birth Year'].max()
-        common_by = users = df['Birth Year'].value_counts().index[0]
-        print('\nThe earliest birth year was {}. \nThe most recent birth year was {}. \nThe most common birth year is {}.'.format(int(earliest_by), int(recent_by), int(common_by)))
+        print('\nThe earliest birth year was {}. \nThe most recent birth year was {}. \nThe most common birth year is {}.'.format(int(df['Birth Year'].min()), int(df['Birth Year'].max()), int(df['Birth Year'].value_counts().index[0])))
     else:
         print('Washington does not collect data on gender and birth year.')
     print("\nThis took %s seconds." % (time.time() - start_time))
